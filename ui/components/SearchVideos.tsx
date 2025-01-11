@@ -52,7 +52,7 @@ const Searchvideos = ({
             const customOpenAIKey = localStorage.getItem('openAIApiKey');
 
             const res = await fetch(
-              `http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/videos`,
+              `${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/videos`,
               {
                 method: 'POST',
                 headers: {

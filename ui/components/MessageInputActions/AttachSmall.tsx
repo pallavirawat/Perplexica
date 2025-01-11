@@ -39,7 +39,7 @@ const AttachSmall = ({
     data.append('embedding_model_provider', embeddingModelProvider!);
     data.append('embedding_model', embeddingModel!);
 
-    const res = await fetch(`http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/uploads`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/uploads`, {
       method: 'POST',
       body: data,
     });

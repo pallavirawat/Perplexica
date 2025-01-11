@@ -21,7 +21,7 @@ const Page = () => {
     const fetchChats = async () => {
       setLoading(true);
 
-      const res = await fetch(`http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/chats`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/chats`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

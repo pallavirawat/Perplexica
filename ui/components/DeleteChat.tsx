@@ -30,7 +30,7 @@ const DeleteChat = ({
     setLoading(true);
     try {
       const res = await fetch(
-        `http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/chats/${chatId}`,
+        `${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/chats/${chatId}`,
         {
           method: 'DELETE',
           headers: {

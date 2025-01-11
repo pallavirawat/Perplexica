@@ -99,7 +99,7 @@ const SettingsDialog = ({
     if (isOpen) {
       const fetchConfig = async () => {
         setIsLoading(true);
-        const res = await fetch(`http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/config`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/config`, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -163,7 +163,7 @@ const SettingsDialog = ({
     setIsUpdating(true);
 
     try {
-      await fetch(`http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/config`, {
+      await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/config`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

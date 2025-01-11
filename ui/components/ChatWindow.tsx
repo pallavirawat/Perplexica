@@ -68,7 +68,7 @@ const useSocket = (
             : null;
 
         const providers = await fetch(
-          `http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/models`,
+          `${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/models`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -332,7 +332,7 @@ const loadMessages = async (
   setFileIds: (fileIds: string[]) => void,
 ) => {
   const res = await fetch(
-    `http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/chats/${chatId}`,
+    `${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/chats/${chatId}`,
     {
       method: 'GET',
       headers: {
@@ -394,7 +394,7 @@ const ChatWindow = ({ id }: { id?: string }) => {
 
   const [isWSReady, setIsWSReady] = useState(false);
   const ws = useSocket(
-    `ws://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}`!,
+    `wss://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}`!,
     setIsWSReady,
     setHasError,
   );

@@ -37,7 +37,8 @@ services:
       args:
         - NEXT_PUBLIC_API_URL=http://localhost:3001/api
         - NEXT_PUBLIC_WS_URL=ws://localhost:3001
-        - NEXT_PUBLIC_API_PORT=3001/api
+        - NEXT_PUBLIC_API_PORT=/api
+        - NEXT_PUBLIC_PROTOCOL=https
     image: itzcrazykns1337/perplexica-frontend:main
     depends_on:
       - perplexica-backend

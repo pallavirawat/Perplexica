@@ -7,7 +7,7 @@ export const getSuggestions = async (chatHisory: Message[]) => {
   const customOpenAIKey = localStorage.getItem('openAIApiKey');
   const customOpenAIBaseURL = localStorage.getItem('openAIBaseURL');
 
-  const res = await fetch(`http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/suggestions`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/suggestions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

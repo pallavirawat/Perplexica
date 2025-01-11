@@ -19,7 +19,7 @@ const Page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://${window.location.hostname}:${process.env.NEXT_PUBLIC_API_PORT}/discover`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${window.location.hostname}${process.env.NEXT_PUBLIC_API_PORT}/discover`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
